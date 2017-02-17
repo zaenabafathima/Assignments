@@ -1,15 +1,6 @@
 body {
-  padding-top: 50px;
   background-color: black;
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-
-.body-div
-{
-  height:100%;
+  min-height: 100vh;
 }
 
 .tile{
@@ -23,26 +14,21 @@ background-color: skyblue;
 .header-style{
   color:skyblue;
   background-color: grey;
-  margin:20px;
   border-color: white;
+  height: 70px;
+  font-size: 32px;
+  padding: 10px;
 }
-
-.left-panel{
-
+.wrapper {
+  height: calc(100vh - 50px);
+  padding-top: 20px;
+}
+.wrapper .left-panel{
   background-color: skyblue;
   border: solid;
-  margin-bottom: -2000px; /* any large number will do */
-  padding-bottom: 2000px; ;
-
+  height: 100%;
 }
 
-.babyDiv
-{
-  height:20px;;
-  border:solid;
-  text-align: center;
-  align-self: baseline;
-}
 
 .listStyle
 {
