@@ -1,0 +1,58 @@
+body {
+  padding-top: 50px;
+  background-color: black;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.body-div
+{
+  height:100%;
+}
+
+.tile{
+padding: 5px;
+height: 100px;
+border: solid;
+text-align: center;
+background-color: skyblue;
+}
+
+.header-style{
+  color:skyblue;
+  background-color: grey;
+  margin:20px;
+  border-color: white;
+}
+
+.left-panel{
+
+  background-color: skyblue;
+  border: solid;
+  margin-bottom: -2000px; /* any large number will do */
+  padding-bottom: 2000px; ;
+
+}
+
+.babyDiv
+{
+  height:20px;;
+  border:solid;
+  text-align: center;
+  align-self: baseline;
+}
+
+.listStyle
+{
+
+  font-family: sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+li:hover
+{
+  color: red;
+  cursor: pointer;
+}

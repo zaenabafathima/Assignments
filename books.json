@@ -1,0 +1,96 @@
+{
+  "books":[
+
+    {
+      "title":"I want: How to never get",
+      "author":"Reetika Reddy",
+      "tags":["Self Help", "Non-Fiction"]
+    },
+
+    {
+      "title":"Life in Pink",
+      "author":"Priyanka Agrawal",
+      "tags":["Fiction"]
+    },
+
+    {
+      "title":"Bengali learnt in 30 days",
+      "author":"Shounak Roy",
+      "tags":["Self Help"]
+    },
+
+    {
+      "title":"Living in denial",
+      "author":"Shashank Venkatesh",
+      "tags":["History", "Economics"]
+    },
+
+    {
+      "title":"Indifference for beginners",
+      "author":"Shweta Sridhar",
+      "tags":["Non-Fiction", "Crime"]
+    },
+
+    {
+      "title":"Life as a teddy bear",
+      "author":"Abhishek Varghese",
+      "tags":["Fiction"]
+    },
+
+    {
+      "title":"HTML for dummies",
+      "author":"Shounak Roy",
+      "tags":["Non-Fiction"]
+    },
+
+    {
+      "title":"Guide to Life",
+      "author":"Sukrit Venkatagiri",
+      "tags":["History", "Economics"]
+    },
+
+    {
+      "title":"Diplomacy for experts",
+      "author":"Varun Murthy",
+      "tags":["History"]
+    },
+
+    {
+      "title":"My Cloak Of Invisibility",
+      "author":"Saurabh Pandey",
+      "tags":["History"]
+    },
+
+    {
+      "title":"Face Your Fears",
+      "author":"Harsh Shukla",
+      "tags":["Self Help"]
+    },
+
+    {
+      "title":"The Art of Saving",
+      "author":"Jesso Murugan",
+      "tags":["Self Help", "Economics"]
+    },
+    {
+      "title":"Chocoholic and Proud",
+      "author":"Roshan Baladhanvi",
+      "tags":["Self Help", "Non-Fiction"]
+    },
+
+    {
+      "title":"Food and Fatigue: Findings",
+      "author":"Ankit Jain",
+      "tags":["Non-Fiction"]
+    },
+
+    {
+      "title":"Another Book",
+      "author":"Someone",
+      "tags":["Self Help", "Economics"]
+    }
+
+
+
+  ]
+}
