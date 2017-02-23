@@ -61,7 +61,7 @@ function rightPanelPopulate(allBooks, filter){
   container.innerHTML="";
 
   allBooks=allBooks.books;
-  if(filter!=undefined){
+  if(filter!=undefined && filter!='All Titles'){
 
 
 
@@ -78,7 +78,9 @@ function rightPanelPopulate(allBooks, filter){
 }
 else {
   for(var i=0; i<allBooks.length; i++){
-    container.innerHTML+="<div class='col-md-4 col-sm-6 col-xs-12 tile'>"+"<b><i>"+allBooks[i].title+"</i></b><br/>"+allBooks[i].author+"   <br/><b></div>";
+    var bookTags=allBooks[i].tags;
+
+    container.innerHTML+="<div class='col-md-4 col-sm-6 col-xs-12 tile'>"+"<b><i>"+allBooks[i].title+"</i></b><br/>"+allBooks[i].author+"   <br/><b>"+bookTags+"</div>";
 
     //container.innerHTML+="<div class='col-md-4 col-sm-6 col-xs-12 tile'>"+allBooks[i].title+" :"+allBooks[i].author+"</div>";
   }
@@ -114,6 +116,7 @@ var container=document.getElementById('leftpanel'); //our right panel
 container.innerHTML="";
 //console.log(allBooks.books[2]);
 container.innerHTML+="<ul>";
+container.innerHTML+="<li class='listStyle' onclick='filterit(event)'>All Titles</li>";
 for(var i=0; i<unique.length; i++){
   container.innerHTML+="<li class='listStyle' onclick='filterit(event)'>"+unique[i]+"</li>";
 }
