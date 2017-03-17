@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,52 +8,102 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Assignments</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <!--  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">  -->
+    <!-- <link href="./css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <!--  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="bookController.js"></script>
+    <script src="bookFactory.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <title>Assignments</title>
+
+    <!-- Bootstrap core CSS -->
+
+
   </head>
 
-  <body>
+  <body ng-controller="bookController">
+
+<div class="container-fluid header-style">
+
+  <center>
+  <span class="glyphicon glyphicon-menu-hamburger" id="glyph" style="color: white; float:left; line-height:2" aria-hidden="true" ng-click="isCollapsedHorizontal=!isCollapsedHorizontal"></span>
+  <!-- &nbsp; &nbsp; &nbsp; -->
+  <span>Book Gallery</span>
+
+  <div class="btn-group" style="float:right;"  uib-dropdown is-open="status.isopen">
+        <button id="single-button" type="button" class="btn btn-primary graph-button" uib-dropdown-toggle ng-disabled="disabled">
+          View Stats <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+          <li id="dropdown-item" role="menuitem"><a ng-click="showPieChart=true; showColChart=false ">Book count per tag</a></li>
+          <li id="dropdown-item"role="menuitem"><a ng-click="showColChart=true; showPieChart=false">Book count per author</a></li>
+          <li class="divider"></li>
+        <li id="dropdown-item"role="menuitem"><a ng-click="showPieChart=false; showColChart=false">Close graphs</a></li>
+
+        </ul>
+      </div>
 
 
-<header class="container-fluid header-style">Book Gallery</header>
+
+
+</center>
+
+
+</div>
+
+
+
+
 
 <div class="container-fluid wrapper"> <!-- the mega body div -->
-    <div class="container-fluid col-md-3 col-xs-6 left-panel" id="leftpanel">
-      The left panel
 
-      <script type="text/javascript" src="app.js"></script>
-    </div><!-- /.container -->
-    <div class="container-fluid col-md-9 col-xs-6 right-panel" id="rightpanel">
 
-    <script type="text/javascript" src="app.js"></script>
-  </div>
+  <div uib-collapse="isCollapsedHorizontal" horizontal="true" ng-init="isCollapsedHorizontal=false" class="container-fluid left-panel col-md-3 col-xs-6">
+    <div class="thumbnail" id="menu-container">
+      <p class="thumbnail menu-header"><b>Handy Sidebar</b></p>
+      <p class="thumbnail search-bar" id="menuItem"><span class="fa fa-search"></span>&nbsp; Search
+       <input type="text" value="Search by Title" placeholder="Keyword" style="color:black;" ng-model="key" ng-change="searchBooks(key)"/>
+      </p>
+      <p class="thumbnail" id="allTitles" ng-click="filterit('All Titles')">Clear Filters</p>
+
+          <p class="thumbnail" id="menuItem">Filter by Tags</p>
+             <ul class="listStyle">
+               <li id="tagItem" ng-class="{badge: $index===selected}" ng-repeat="tag in allTags" ng-click="filterit(tag, $index)">{{tag}} </li>
+           </ul>
+
 </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="./js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-  </body>
+
+
+
+
+
+
+  </div>
+
+
+    <div ng-class="isCollapsedHorizontal? 'col-md-12 col-xs-12': 'col-md-9 col-xs-6'" class="container-fluid col-md-9 col-xs-6" id="rightPanel">
+
+      <div  class="graph" id="container" ng-show="showPieChart">Pie chart</div>
+
+
+      <div class="graph" id="barContainer" ng-show="showColChart">bar plot!!</div>
+
+    <book-list books="currentBooks"></book-list>
+
+  </div>
+
+
+
+</div>
+
+
+    </body>
 </html>

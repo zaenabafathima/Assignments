@@ -68,9 +68,9 @@
     },
 
     {
-      "title":"The Art of Saving",
+      "title":"Road Safety 101",
       "author":"Jesso Murugan",
-      "tags":["Self Help", "Economics"]
+      "tags":["Self Help"]
     },
     {
       "title":"Chocoholic and Proud",
@@ -85,10 +85,27 @@
     },
 
     {
-      "title":"Another Book",
-      "author":"Someone",
-      "tags":["Self Help", "Economics"]
+      "title":"UI for Dummies",
+      "author":"Jagajit Prusty",
+      "tags":["Self Help"]
+    },
+    {
+      "title":"Armed: Unleashing the Power of a Single Hand",
+      "author":"Jagajit Prusty",
+      "tags":["Self Help", "Non-Fiction"]
+    },
+    {
+      "title":"Bangkok Travel Guide",
+      "author":"Jagajit Prusty",
+      "tags":["Self Help", "Crime"]
+    },
+    {
+      "title":"Apology E-mail Templates for Undergrads",
+      "author":"Jagajit Prusty",
+      "tags":["Self Help"]
     }
+
+
 
 
 

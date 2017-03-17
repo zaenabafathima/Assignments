@@ -1,0 +1,13 @@
+
+<div ng-repeat="book in books" ng-class="isCollapsedHorizontal?'col-md-3 col-xs-6' : 'col-md-4 col-xs-12'">
+  <div class="thumbnail tile" id="book-tile" style="color:white;">
+
+    <p class="thumbnail book-title">{{book.title}}</p>
+    <p>{{book.author}}</p>
+    <!-- <p>{{isCollapsed}} is the value of sidebar </p> -->
+
+
+    <span ng-repeat="tag in book.tags" class="badge">{{tag}} </span>
+  </div>
+
+</div>
